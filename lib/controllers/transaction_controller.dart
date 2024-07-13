@@ -20,9 +20,13 @@ class TransactionController extends GetxController {
   }
 
   void addTransaction(TransactionData transaction) async {
-    final dbHelper = DatabaseHelper();
-    await dbHelper.insertTransaction(transaction.toMap());
-    fetchTransactions();
+    try {
+      final dbHelper = DatabaseHelper();
+      await dbHelper.insertTransaction(transaction.toMap());
+      fetchTransactions();
+    } catch (e) {
+      Get.snackbar("error", 'Error adding transaction: $e');
+    }
   }
 
   void deleteTransaction(int id) async {

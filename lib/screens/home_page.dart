@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                 Get.to(() => EditTransactionPage(transaction: transaction));
               },
               onLongPress: () {
-                controller.deleteTransaction(transaction.id);
+                controller.deleteTransaction(transaction.id!);
               },
               // onLongPress: () => controller.deleteTransaction(transaction.id!),
             );

@@ -1,11 +1,11 @@
 class TransactionData {
-  int id;
+  int? id;
   String description;
   double amount;
   DateTime date;
 
   TransactionData(
-      {required this.id,
+      {this.id,
       required this.description,
       required this.amount,
       required this.date});

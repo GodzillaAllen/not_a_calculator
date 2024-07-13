@@ -72,7 +72,7 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
               onPressed: () {
                 double amount = double.tryParse(amountController.text) ?? 0.0;
                 TransactionData newTransaction = TransactionData(
-                  id: 0, // SQLite autoincrements the ID
+                  // id: 0, // SQLite autoincrements the ID
                   description: descriptionController.text,
                   amount: amount,
                   date: selectedDate,
